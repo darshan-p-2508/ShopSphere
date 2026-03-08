@@ -88,3 +88,108 @@ Create the MySQL database:
 CREATE DATABASE shopsphere;
 ```
 The application will automatically create tables using spring.jpa.hibernate.ddl-auto=update.
+
+# Project Structure
+
+ShopSphere/
+├── .gitignore
+├── README.md
+├── LICENSE
+├── pom.xml
+├── application.properties
+│
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/dars/shopsphere/
+│   │   │       ├── ShopsphereApplication.java
+│   │   │       ├── config/
+│   │   │       │   ├── AppConfig.java
+│   │   │       │   └── SwaggerConfig.java
+│   │   │       ├── security/
+│   │   │       │   ├── SecurityConfig.java
+│   │   │       │   ├── CustomUserDetailsService.java
+│   │   │       │   └── jwt/
+│   │   │       │       ├── JwtAuthenticationFilter.java
+│   │   │       │       └── JwtUtil.java
+│   │   │       ├── common/
+│   │   │       │   ├── response/
+│   │   │       │   │   └── ApiResponse.java
+│   │   │       │   └── exception/
+│   │   │       │       └── GlobalExceptionHandler.java
+│   │   │       ├── auth/
+│   │   │       │   ├── controller/
+│   │   │       │   │   └── AuthController.java
+│   │   │       │   ├── dto/
+│   │   │       │   │   ├── AuthResponse.java
+│   │   │       │   │   ├── LoginRequest.java
+│   │   │       │   │   └── RegisterRequest.java
+│   │   │       │   └── service/
+│   │   │       │       ├── AuthService.java
+│   │   │       │       └── AuthServiceImpl.java
+│   │   │       ├── user/
+│   │   │       │   ├── controller/UserController.java
+│   │   │       │   ├── dto/
+│   │   │       │   │   ├── UserRequest.java
+│   │   │       │   │   └── UserResponse.java
+│   │   │       │   ├── entity/User.java
+│   │   │       │   ├── repository/UserRepository.java
+│   │   │       │   └── service/
+│   │   │       │       ├── UserService.java
+│   │   │       │       └── UserServiceImpl.java
+│   │   │       ├── product/
+│   │   │       │   ├── controller/ProductController.java
+│   │   │       │   ├── dto/
+│   │   │       │   │   ├── ProductRequest.java
+│   │   │       │   │   └── ProductResponse.java
+│   │   │       │   ├── entity/Product.java
+│   │   │       │   ├── repository/ProductRepository.java
+│   │   │       │   └── service/
+│   │   │       │       ├── ProductService.java
+│   │   │       │       └── ProductServiceImpl.java
+│   │   │       ├── cart/
+│   │   │       │   ├── controller/CartController.java
+│   │   │       │   ├── dto/
+│   │   │       │   │   ├── AddToCartRequest.java
+│   │   │       │   │   ├── CartItemResponse.java
+│   │   │       │   │   └── CartResponse.java
+│   │   │       │   ├── entity/
+│   │   │       │   │   ├── Cart.java
+│   │   │       │   │   └── CartItem.java
+│   │   │       │   ├── repository/
+│   │   │       │   │   ├── CartRepository.java
+│   │   │       │   │   └── CartItemRepository.java
+│   │   │       │   └── service/
+│   │   │       │       ├── CartService.java
+│   │   │       │       └── CartServiceImpl.java
+│   │   │       ├── order/
+│   │   │       │   ├── controller/OrderController.java
+│   │   │       │   ├── dto/
+│   │   │       │   │   ├── OrderItemResponse.java
+│   │   │       │   │   └── OrderResponse.java
+│   │   │       │   ├── entity/
+│   │   │       │   │   ├── Order.java
+│   │   │       │   │   └── OrderItem.java
+│   │   │       │   ├── enums/OrderStatus.java
+│   │   │       │   ├── repository/OrderRepository.java
+│   │   │       │   └── service/
+│   │   │       │       ├── OrderService.java
+│   │   │       │       └── OrderServiceImpl.java
+│   │   │       └── payment/
+│   │   │           ├── controller/PaymentController.java
+│   │   │           ├── dto/PaymentRequest.java
+│   │   │           └── service/
+│   │   │               ├── PaymentService.java
+│   │   │               └── PaymentServiceImpl.java
+│   │   └── resources/
+│   │       ├── application.properties
+│   │       └── (optional) data.sql, schema.sql
+│   │
+│   └── test/
+│       └── java/com/dars/shopsphere/
+│           ├── ShopsphereApplicationTests.java
+│           ├── cart/service/CartServiceImplTest.java
+│           ├── order/service/OrderServiceImplTest.java
+│           └── payment/service/PaymentServiceImplTest.java
+│
+└── .gitignore
