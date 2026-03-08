@@ -90,7 +90,7 @@ CREATE DATABASE shopsphere;
 The application will automatically create tables using spring.jpa.hibernate.ddl-auto=update.
 
 # Project Structure
-
+```
 ShopSphere/
 ├── .gitignore
 ├── README.md
@@ -193,3 +193,4 @@ ShopSphere/
 │           └── payment/service/PaymentServiceImplTest.java
 │
 └── .gitignore
+```
